@@ -1,7 +1,7 @@
 # Личный проект «Мишка» [![Build status][travis-image]][travis-url] [![Dependency status][dependency-image]][dependency-url]
 
 * Студент: [Диаконашвили Зураб](https://up.htmlacademy.ru/adaptive/11/user/86410).
-* Наставник: `Неизвестно`.
+* Наставник: `безнаставника (повторный курс)`.
 
 ---
 
