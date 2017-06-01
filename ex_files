@@ -16,6 +16,7 @@
 *\.Saved\*
 *\.git---
 *\.git---\*
+*.psd
 *.log
 *.dbg
 *.rar
