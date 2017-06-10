@@ -1,7 +1,7 @@
 .review {
   padding-bottom: 48px;
   @include border($type:bottom, $color:red);
-  
+
   &__title {
     margin-bottom: 21px;
     color: #000;
@@ -9,7 +9,7 @@
     font-size: 25px;
     line-height: 35px;
   }
-  
+
   &__item {
     margin-bottom: 30px;
     p {
@@ -27,12 +27,12 @@
       }
     }
   }
-  
+
   &__nav {
     font-size: 0;
     margin-bottom: 38px;
   }
-  
+
   &__btn {
     position: relative;
     width: 50%;

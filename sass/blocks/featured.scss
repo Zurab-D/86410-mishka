@@ -2,24 +2,24 @@
   padding-top: 28px;
   padding-bottom: 38px;
   @include border($type:bottom, $color:red);
-  
+
   &__title {
     margin-bottom: 3px;
     color: #000;
     font-size: 25px;
     line-height: 30px;
   }
-  
+
   &__subtitle {
     @include bold-text();
     color: $color-colored;
     margin-bottom: 20px;
   }
-  
+
   &__text {
     line-height: 24px;
   }
-  
+
   &__img {
     margin-bottom: 20px;
     img {

@@ -29,7 +29,7 @@
   &__price {
     padding-top: 23px;
     height: 73px;
-    @include bold-text($size: 16px, $color: #000); 
+    @include bold-text($size: 16px, $color: #000);
     @include border-top();
   }
 
