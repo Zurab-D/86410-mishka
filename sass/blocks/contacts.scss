@@ -1,0 +1,33 @@
+.contacts {
+  padding-top: 42px;
+  &__title {
+    margin-bottom: 29px;
+    font-size: 18px;
+    color: #000;
+  }
+  &__items {
+    li {
+      margin-bottom: 30px;
+      line-height: 30px;
+    }
+  }
+  &__item-label {
+    display: inline-block;
+  }
+  &__item-value {
+    display: inline-block;
+    width: 70%;
+    float: right;
+  }
+  &__map {
+    margin-top: 126px;
+    margin-bottom: 40px;
+    height: 457px;
+    /* @include outline(); */
+    @include wrapper(margin, -30px);
+  }
+  &__btn {
+    margin-bottom: 40px;
+    @include btn-wide($size: 18px);
+  }
+}

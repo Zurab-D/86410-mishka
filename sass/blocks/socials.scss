@@ -1,0 +1,21 @@
+.socials {
+  height: 80px;
+  line-height: 80px;
+  width: 156px;
+  margin: 0 auto;
+  white-space: nowrap;
+  @include list-style();
+  font-size: 0;
+  &__item {
+    vertical-align: middle;
+    /* @include outline(); */
+    display: inline-block;
+    margin: 0 11px;
+    line-height: 0;
+    width: 30px;
+    height: 30px;
+    &--instagram {}
+    &--facebook {}
+    &--twitter {}
+  }
+}

@@ -1,0 +1,17 @@
+.features {
+  margin-top: 15px;
+  margin-bottom: 28px;
+  line-height: 24px;
+  font-size: 15px;
+  li {
+    padding: 8px 0;
+    @include border($type: bottom);
+  };
+  &__item-name {
+    display: inline-block;
+    width: 100px
+  };
+  &__item-value {
+    display: inline-block;
+  };
+}
