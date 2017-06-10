@@ -1,0 +1,125 @@
+/* миксины */
+
+@mixin clearfix {
+  &:before,
+  &:after {
+    content: "";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+
+/* Центрировать по вертикали текст в блоке (например в пункте меню) */
+@mixin text-center-vertical ($block-height, $line-height) {
+  padding-top: ($block-height - $line-height) / 2 - 1;
+  /* padding-bottom: ($block-height - $line-height) / 2 - 1; */
+}
+
+
+/* Вычислить паддинг между двумя блоками зная требуемое расстояние между ними */
+@mixin padding-between-blocks ($height-required, $font-size-1, $lign-height-1, $font-size-2, $lign-height-2, $top-or-bottom: bottom, $margin-or-padding: padding) {
+//   params:
+//    $height-required = #{$height-required}
+//    $font-size-1 = #{$font-size-1}
+//    $lign-height-1 = #{$lign-height-1}
+//    $font-size-2 = #{$font-size-2}
+//    $lign-height-2 = #{$lign-height-2}
+//    $top-or-bottom = #{$top-or-bottom}
+//    round($font-size-1 / 10) = #{round($font-size-1 / 10)}
+//    round($font-size-2 / 10) = #{round($font-size-2 / 10)}
+
+  #{$margin-or-padding}-#{$top-or-bottom}: floor($height-required - ($lign-height-1 - $font-size-1) / 2 - ($lign-height-2 - $font-size-2) / 2 - round($font-size-1 / 10) / 2 - round($font-size-2 / 10) / 2);
+}
+
+
+/* Вычислить паддинг между первой/последней строкой и верхним/нижним краем блока */
+@mixin padding-to-edge ($height-required, $font-size, $lign-height, $top-or-bottom: bottom, $margin-or-padding: padding) {
+  @include padding-between-blocks ($height-required, $font-size, $lign-height, 0, 0, $top-or-bottom, $margin-or-padding);
+}
+
+
+
+/* Обертка для отталкивания слева-справа */
+@mixin wrapper($margin-or-padding: padding, $size: 30px) {
+  #{$margin-or-padding}-left: $size;
+  #{$margin-or-padding}-right: $size;
+}
+
+
+@mixin btn {
+  display: inline-block;
+  vertical-align: top;
+  outline: none;
+  border: 2px solid #444;
+  border-radius: none;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: bold;
+  cursor: pointer;
+  color: $color-default;
+  & a{
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+  }
+}
+
+
+@mixin btn-wide (
+  $padding: 16px,
+  $size: $header-alt-size,
+  $height: $header-alt-size
+) {
+  @include btn;
+  padding-top: $padding;
+  padding-bottom: $padding;
+  width: 100%;
+  font-weight: bold;
+  font-size: $size;
+  line-height: $height;
+}
+
+
+@mixin input {
+  padding: 0 22px;
+  height: 60px;
+  border: 4px solid $color-bg-input;
+  background: $color-bg-input;
+  font-weight: bold;
+  font-size: $header-size;
+  line-height: 56px;
+  outline: none;
+}
+
+
+@mixin outline {
+  outline: 1px solid red;
+}
+
+
+@mixin img-vert-center-helper {
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+
+
+@mixin list-style($style: none) {
+  list-style: none;
+}
+
+
+@mixin visually-hidden() {
+  position: absolute;
+  margin: -1px;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  border: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}

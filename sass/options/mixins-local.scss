@@ -1,0 +1,47 @@
+/* миксины */
+
+@mixin bold-text($weight: bold, $size: $header-alt-size, $height: $header-height, $color: $color-default) {
+  font-weight: $weight;
+  font-size: $size;
+  line-height: $height;
+  color: $color;
+}
+
+@mixin border($type: all, $width: 1px, $style: solid, $color: $color-border) {
+  @if $type == all {
+    border: $width $style $color;
+  } @else if $type == top {
+    border-top: $width $style $color;
+  } @else if $type == bottom {
+    border-bottom: $width $style $color;
+  } @else if $type == left {
+    border-left: $width $style $color;
+  } @else if $type == right {
+    border-right: $width $style $color;
+  }
+}
+
+
+@mixin border-top($width: 1px, $style: solid, $color: $color-border) {
+  @include border($type: top);
+}
+
+
+/* @mixin border-top($width: 1px, $style: solid, $color: $color-border) {
+  border-top: $width $style $color;
+} */
+
+
+@mixin curved-border() {
+  position: relative;
+  &:after {
+    content: '';
+    position: absolute;
+    height: 5px;
+    width: calc(100% + 60px);
+    background-color: red;
+    top: 100%;
+    left: -30px;
+    z-index: 9999;
+  }
+}

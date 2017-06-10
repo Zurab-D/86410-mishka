@@ -1,0 +1,48 @@
+.main-nav {
+  position: relative;
+  top: 0;
+  height: 100%;
+  /* <span class="main-nav__toggler"><span></span></span> */
+  &__toggler {
+    position: absolute;
+    display: block;
+    left: 269px;
+    top: -39px;
+    transform: translateY(-50%);
+    border-top: 2px solid #221F1F;
+    border-bottom: 2px solid #221F1F;
+    width: 20px;
+    height: 14px;
+    z-index: 1;
+    background-color: transparent;
+    span {
+      position: absolute;
+      display: block;
+      width: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      border-top: 2px solid #221F1F;
+      z-index: 2;
+    }
+  }
+  &__wrapper {
+    display: none;
+    li {
+      height: 78px;
+      @include border-top();
+      @include text-center-vertical(70px, 20px);
+      //vertical-align: middle;
+      text-align: center;
+      a {
+        @include bold-text($color: #000);
+        text-decoration: none;
+      }
+    }
+  }
+  &--no-js,
+  &--open {
+    .main-nav__wrapper {
+      display: block;
+    }
+  }
+}

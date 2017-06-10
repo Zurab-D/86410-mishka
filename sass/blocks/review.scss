@@ -1,0 +1,58 @@
+.review {
+  padding-bottom: 48px;
+  @include border($type:bottom, $color:red);
+
+  &__title {
+    margin-bottom: 21px;
+    color: #000;
+    font-weight: bold;
+    font-size: 25px;
+    line-height: 35px;
+  }
+
+  &__item {
+    margin-bottom: 30px;
+    p {
+      margin-bottom: 23px;
+      line-height: 30px;
+    }
+    footer {
+      @include bold-text($height: 31px);
+      color: #000;
+      cite {
+        color: #444;
+        display: block;
+        font-weight: normal;
+        font-style: normal;
+      }
+    }
+  }
+
+  &__nav {
+    font-size: 0;
+    margin-bottom: 38px;
+  }
+
+  &__btn {
+    position: relative;
+    width: 50%;
+    height: 50px;
+    @include btn();
+    border-width: 1px;
+    img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translateY(-50%) translateX(-50%);
+    }
+    &--prev,
+    &--next {
+      border-color: $color-border;
+    }
+    &--write {
+      @include btn-wide($size: 18px);
+    }
+  }
+
+  @include curved-border();
+}

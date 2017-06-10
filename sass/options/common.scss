@@ -1,0 +1,61 @@
+html { box-sizing: border-box; }
+*, *:before, *:after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+
+body {
+  font-family: "Open Sans", "Courier new", sans-serif;
+  font-weight: normal;
+  font-size: $base-size;
+  background-color: #fff;
+  color: $color-default;
+  text-align: left;
+}
+
+
+.main-overlay {
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+  /* @media(min-width: $screen_md) {
+    margin: 0 auto;
+    max-width: 1200px;
+    box-shadow: 0px 7px 15px 0px rgba(0, 0, 0, .15);
+  } */
+}
+
+
+.outline {
+  outline: 1px solid green;
+}
+
+
+.btn {
+  @include btn();
+}
+
+
+input[type="file"],
+input[type="radio"],
+input[type="checkbox"] {
+  display: none;
+}
+
+
+ul {
+  list-style: none;
+}
+
+.visually-hidden {
+  position: absolute;
+  margin: -1px;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  border: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}

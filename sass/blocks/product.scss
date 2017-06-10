@@ -1,0 +1,40 @@
+.product {
+  position: relative;
+  border-bottom: 1px solid $color-border;
+  margin-bottom: 30px;
+  line-height: 0;
+  h3 {
+    margin: 0 0 5px;
+    @include bold-text();
+  }
+
+  &__text-wrapper {
+    padding: 27px 27px 0;
+    border: 1px solid $color-border;
+  }
+
+  p {
+    padding-bottom: 17px;
+    font-size: 13px;
+    line-height: 30px;
+  }
+
+  &__img {
+    img {
+      margin-bottom: 0;
+      width: 100%;
+    }
+  }
+
+  &__price {
+    padding-top: 23px;
+    height: 73px;
+    @include bold-text($size: 16px, $color: #000);
+    @include border-top();
+  }
+
+  &__basket {
+    position: absolute;
+    width: 10px;
+  }
+}
