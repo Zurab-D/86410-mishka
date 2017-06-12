@@ -1,12 +1,10 @@
 .main-nav {
   position: relative;
   top: 0;
-  height: 100%;
-  /* <span class="main-nav__toggler"><span></span></span> */
   &__toggler {
     position: absolute;
     display: block;
-    left: 269px;
+    right: 30px;
     top: -39px;
     transform: translateY(-50%);
     border-top: 2px solid #221F1F;
@@ -24,25 +22,55 @@
       border-top: 2px solid #221F1F;
       z-index: 2;
     }
+    @media (min-width: $screen_md) {
+      display: none;
+    }
   }
   &__wrapper {
     display: none;
     li {
-      height: 78px;
       @include border-top();
-      @include text-center-vertical(70px, 20px);
+      padding-top: 26px;
+      padding-bottom: 27px;
       //vertical-align: middle;
       text-align: center;
       a {
         @include bold-text($color: #000);
         text-decoration: none;
+        @media (min-width: $screen_md) {
+          font-size: 15px;
+          line-height: 24px;
+        }
       }
+      @media (min-width: $screen_md) {
+        padding-top: 18px;
+        padding-bottom: 19px;
+        border: none;
+      }
+    }
+    ul {
+      @media (min-width: $screen_md) {
+        display: flex;
+        justify-content: space-around;
+      }
+    }
+    @media (min-width: $screen_md) {
+      display: block;
+      margin-right: 398px;
     }
   }
   &--no-js,
   &--open {
     .main-nav__wrapper {
       display: block;
+      /*@media (min-width: $screen_md) {
+        display: flex;
+      }*/
     }
+  }
+
+  @media (min-width: $screen_md) {
+    @include wrapper();
+    background-color: #fafafa;
   }
 }

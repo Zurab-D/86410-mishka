@@ -59,3 +59,19 @@ ul {
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
+
+
+.hide-on-md {
+  display: inherited;
+  @media (min-width: $screen_md) {
+    display: none;
+  }
+}
+
+
+.show-on-md {
+  display: none;
+  @media (min-width: $screen_md) {
+    display: inherit;
+  }
+}

@@ -1,5 +1,11 @@
+html,
+body {
+    height: 100%;
+}
+
 .page-header {
   position: relative;
+  @include border($type:bottom);
   &__helper {
     @include img-vert-center-helper();
   }
@@ -17,4 +23,56 @@
       vertical-align: middle;
     }
   }
+
+  &__search {
+    display: none;
+    border-left: 1px solid $color-border;
+    input {
+      width: 95%;
+      border: none;
+      outline: none;
+    }
+  }
+
+  &__basket {
+    display: none;
+    border-left: 1px solid $color-border;
+    &-text {
+      padding-left: 84px;
+      font-weight: bold;
+      font-size: 17px;
+      line-height: 24px;
+    }
+  }
+
+  &--row {
+    @media (min-width: $screen_md) {
+      display: table-row;
+    }
+  }
+
+  &--cell {
+    @media (min-width: $screen_md) {
+      display: table-cell;
+      vertical-align: middle;
+    }
+  }
+
+  &__column {
+    display: table-column;
+    &--logo {
+    }
+    &--search {
+      width: 83px;
+    }
+    &--basket {
+      width: 315px;
+    }
+  }
+
+  @media (min-width: $screen_md) {
+    display: table;
+    width: 100%;
+  }
+
 }

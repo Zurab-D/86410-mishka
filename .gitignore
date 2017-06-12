@@ -40,6 +40,7 @@ testem.log
 Thumbs.db
 
 /_arc
+/_psd
 
 *.ai
 *.log

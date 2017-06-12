@@ -9,22 +9,34 @@
   <body>
     <header class="page-header">
       <h1 class="page-header__title">Мишка - магазин товаров ручной выделки</h1>
-      <a class="page-header__logo">
-        <span class="page-header__helper"></span>
-        <img src="img/logo-mobile.svg">
-      </a>
-      <nav class="main-nav  main-nav--no-js">
-        <span class="main-nav__toggler"><span></span></span>
-        <div class="main-nav__wrapper">
-          <ul>
-            <li><a href="catalog.html">Каталог товаров</a></li>
-            <li><a href="form.html">Вязание на заказ</a></li>
-            <li><a href="#">Новые поступления</a></li>
-            <li><a href="#">Распродажа</a></li>
-          </ul>
+      <div class="page-header__column  page-header__column--logo"></div>
+      <div class="page-header__column  page-header__column--search"></div>
+      <div class="page-header__column  page-header__column--basket"></div>
+      <div class="page-header__wrpper  page-header--row">
+        <a class="page-header__logo  page-header--cell">
+          <span class="page-header__helper"></span>
+          <img src="img/logo-mobile.svg">
+        </a>
+        <div class="page-header__search  page-header--cell">
+          <input type="search">
         </div>
-      </nav>
+        <div class="page-header__basket  page-header--cell">
+          <p class="page-header__basket-text">Корзина: <span>Пока пуста</span></p>
+        </div>
+      </div>
     </header>
+
+    <nav class="main-nav  main-nav--no-js">
+      <span class="main-nav__toggler"><span></span></span>
+      <div class="main-nav__wrapper">
+        <ul>
+          <li><a href="catalog.html">Каталог товаров</a></li>
+          <li><a href="form.html">Вязание на заказ</a></li>
+          <li class="hide-on-md"><a href="#">Новые поступления</a></li>
+          <li class="hide-on-md"><a href="#">Распродажа</a></li>
+        </ul>
+      </div>
+    </nav>
 
 
     <main class="main  main--index">
@@ -41,18 +53,20 @@
 
       <section class="featured">
         <h2 class="featured__title">Вязаные корзинки</h2>
-        <p class="featured__subtitle">ТОВАР НЕДЕЛИ</p>
-        <p class="featured__text">Экологически чистая пряжа, ручная работа. Доступны в шести расцветках, и трех размерах</p>
-        <ul class="features">
-          <li><span class="features__item-name">Цвет:</span><span class="features__item-value">«Тиффани»/серый</span></li>
-          <li><span class="features__item-name">Диаметр:</span><span class="features__item-value">25 см</span></li>
-          <li><span class="features__item-name">Высота:</span><span class="features__item-value">15 см</span></li>
-        </ul>
-        <div class="featured__img">
-            <img src="img/triple-set-mobile@1x.jpg" alt="">
+        <p class="featured__subtitle">ТОВАР <br class="show-on-md">НЕДЕЛИ</p>
+        <div class="featured__content">
+          <p class="featured__text  featured__content-item">Экологически чистая пряжа, ручная работа. Доступны в шести расцветках, и трех размерах</p>
+          <ul class="features">
+            <li><span class="features__item-name">Цвет:</span><span class="features__item-value">«Тиффани»/серый</span></li>
+            <li><span class="features__item-name">Диаметр:</span><span class="features__item-value">25 см</span></li>
+            <li><span class="features__item-name">Высота:</span><span class="features__item-value">15 см</span></li>
+          </ul>
+          <div class="featured__img  featured__content-item">
+              <img src="img/triple-set-mobile@1x.jpg" alt="">
+          </div>
+          <p class="featured__price  featured__content-item">Цена: 990 руб.</p>
+          <a href="" class="featured__btn  featured__content-item">Заказать</a>
         </div>
-        <p class="featured__price">Цена: 990 руб.</p>
-        <a href="" class="featured__btn">Заказать</a>
       </section>
 
       <section class="about">
@@ -73,15 +87,17 @@
           <p>Я молодая мама, но всё равно фотографии не набирали и близко такого количества лайков, как у популярных инстамамочек. В отчаянии, я накупила аксессуаров и игрушек в Мишке, и мои фотографии сразу стали более стильными, а также набирают больше лайков!</p>
           <footer>Анастасия Красильникова<cite>@misssssiskras</cite></footer>
         </blockquote>
-        <div class="review__nav">
-          <a href="#" class="review__btn  review__btn--prev">
-              <img src="img/icon-left-arrow.svg" alt="">
-          </a>
-          <a href="#" class="review__btn  review__btn--next">
-              <img src="img/icon-right-arrow.svg" alt="">
-          </a>
+        <div class="review__controls">
+          <div class="review__nav">
+            <a href="#" class="review__btn  review__btn--prev">
+                <!--<img src="img/icon-left-arrow.svg" alt="">-->
+            </a>
+            <a href="#" class="review__btn  review__btn--next">
+                <!--<img src="img/icon-right-arrow.svg" alt="">-->
+            </a>
+          </div>
+          <a href="#" class="review__btn  review__btn--write">Написать</a>
         </div>
-        <a href="#" class="review__btn  review__btn--write">Написать</a>
       </section>
 
       <section class="contacts">

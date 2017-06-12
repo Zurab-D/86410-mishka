@@ -1,4 +1,5 @@
 .featured {
+  position: relative;
   padding-top: 28px;
   padding-bottom: 38px;
   @include border($type:bottom, $color:red);
@@ -8,16 +9,30 @@
     color: #000;
     font-size: 25px;
     line-height: 30px;
+    @media (min-width: $screen_md) {
+      margin-bottom: 50px;
+      font-size: 43px;
+      line-height: 50px;
+    }
   }
 
   &__subtitle {
     @include bold-text();
     color: $color-colored;
-    margin-bottom: 20px;
+    margin-bottom: 21px;
+    @media (min-width: $screen_md) {
+      position: absolute;
+      // width: 100px;
+      top: 36px;
+      right: 0;
+      text-align: center;
+    }
   }
 
   &__text {
     line-height: 24px;
+    font-size: 17px;
+    line-height: 30px;
   }
 
   &__img {
@@ -25,16 +40,39 @@
     img {
       width: 100%;
     }
+    @media (min-width: $screen_md) {
+      order: 1;
+      &.featured__content-item {
+        width: 333px;
+        min-height: 405px;
+      }
+    }
   }
 
   &__price {
     margin-bottom: 25px;
     text-align: center;
     @include bold-text();
+    @media (min-width: $screen_md) {
+      margin-bottom: 33px;
+    }
   }
 
   &__btn {
     @include btn-wide();
+  }
+
+  &__content {
+    @media (min-width: $screen_md) {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      align-content: space-between;
+      max-height: 840px;
+      &-item {
+        width: 41%;
+      }
+    }
   }
 
   @include curved-border();
