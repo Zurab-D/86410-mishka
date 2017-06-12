@@ -14,11 +14,15 @@
     text-align: center;
     text-transform: none;
     z-index: 10;
+    @media (min-width: $screen_md) {
+      top: 94px;
+      font-size: 43px;
+      line-height: 50px;
+    }
   }
   &__img {
     position: relative;
     height: 284px;
-    @include border($type:top);
     overflow: hidden;
     z-index: 0;
     img {
@@ -26,6 +30,13 @@
       top: -18px;
       left: 50%;
       transform: translateX(-50%);
+      @media (min-width: $screen_md) {
+        top: 0;
+        height: 100%;
+      }
+    }
+    @media (min-width: $screen_md) {
+      height: 565px;
     }
   }
   &__categories {
@@ -33,7 +44,7 @@
       display: block;
       @include wrapper();
       padding-top: 27px;
-      padding-right: 115px;
+      padding-right: 150px;
       height: 103px;
       background-color: #56C3B2;
       text-align: left;
@@ -48,6 +59,10 @@
       &--active {
         background-color: $color-colored;
       }
+    }
+    @media (min-width: $screen_md) {
+      display: flex;
+      @include wrapper();
     }
   }
 }

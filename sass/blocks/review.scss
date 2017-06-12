@@ -1,6 +1,10 @@
 .review {
+  @include outline();
+  position: relative;
   padding-bottom: 48px;
   @include border($type:bottom, $color:red);
+
+  @include curved-border();
 
   &__title {
     margin-bottom: 21px;
@@ -8,6 +12,10 @@
     font-weight: bold;
     font-size: 25px;
     line-height: 35px;
+    @media (min-width: $screen_md) {
+      font-size: 43px;
+      line-height: 50px;
+    }
   }
 
   &__item {
@@ -28,9 +36,25 @@
     }
   }
 
+  &__controls {
+    @media (min-width: $screen_md) {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      width: 175px;
+      right: 0;
+      height: 325px;
+      top: 80px;
+      justify-content: space-between;
+    }
+  }
+
   &__nav {
     font-size: 0;
     margin-bottom: 38px;
+    @media (min-width: $screen_md) {
+      order: 1;
+    }
   }
 
   &__btn {
@@ -39,20 +63,22 @@
     height: 50px;
     @include btn();
     border-width: 1px;
-    img {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translateY(-50%) translateX(-50%);
-    }
     &--prev,
     &--next {
       border-color: $color-border;
+      background: #fff url("../img/icon-left-arrow.svg") no-repeat 50% 50%;
+      font-size: 0;
+    }
+    &--next {
+      background-image: url("../img/icon-right-arrow.svg");
     }
     &--write {
       @include btn-wide($size: 18px);
+      background-color: #fff;
     }
   }
 
-  @include curved-border();
+  @media (min-width: $screen_md) {
+    padding-top: 80px;
+  }
 }
