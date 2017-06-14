@@ -4,7 +4,7 @@
   &__fields-group {
     @include placeholder();
 
-    h3 {
+    h3, .h3 {
       position: relative;
       font-weight: bold;
       font-size: 17px;
@@ -17,7 +17,8 @@
       }
     }
 
-    h3:after {
+    h3:after,
+    .h3:after {
       content: '';
       position: absolute;
       display: block;
@@ -29,11 +30,13 @@
       right: 0;
     }
 
-    &--email h3:after {
+    &--email h3:after,
+    &--email .h3:after {
       width: calc(100% - 70px);
     }
 
-    &--color h3:after {
+    &--color h3:after,
+    &--color .h3:after {
       width: calc(100% - 60px);
     }
 
@@ -70,7 +73,7 @@
     }
 
     &--type {
-      h3 {
+      h3, .h3 {
         margin-bottom: 35px;
       }
 
@@ -94,7 +97,7 @@
     }
 
     &.form__fields-group--color {
-      h3 {
+      h3, .h3 {
         margin-bottom: 37px;
       }
       label {
@@ -108,7 +111,7 @@
     }
 
     &--fio {
-      h3 {
+      h3, .h3 {
         margin-bottom: 28px;
       }
       label {
@@ -150,6 +153,11 @@
       @media (min-width: $screen_md) {
         margin-left: 165px;
       }
+      .h3 {
+        @media (min-width: $screen_md) {
+          display: block;
+        }
+      }
     }
     &.form__fields-group--phone,
     &.form__fields-group--email {
@@ -158,10 +166,14 @@
         padding-top: 28px;
         padding-left: 266px;
         @include wrapper(margin, -50px);
-        h3 {
+      }
+      h3, .h3 {
+        @media (min-width: $screen_md) {
           margin-top: 42px;
         }
-        input[type="text"] {
+      }
+      input[type="text"] {
+        @media (min-width: $screen_md) {
           background-color: transparent;
           @include placeholder(#c7c7c7);
           color: #000;
@@ -172,12 +184,14 @@
     }
 
     &.form__fields-group--email {
-      padding-top: 0;
-      padding-bottom: 50px;
+      @media (min-width: $screen_md) {
+        padding-top: 0;
+        padding-bottom: 50px;
+      }
     }
 
     &.form__fields-group--additional {
-      h3 {
+      h3, .h3 {
         @media (min-width: $screen_md) {
           margin-top: 59px;
         }
