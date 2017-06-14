@@ -1,9 +1,8 @@
 .review {
-  @include outline();
+  // @include outline();
   position: relative;
   padding-bottom: 48px;
-  @include border($type:bottom, $color:red);
-
+  // @include border($type:bottom, $color:red);
   @include curved-border();
 
   &__title {
@@ -23,6 +22,10 @@
     p {
       margin-bottom: 23px;
       line-height: 30px;
+      @media (min-width: $screen_md) {
+        font-size: 17px;
+        line-height: 30px;
+      }
     }
     footer {
       @include bold-text($height: 31px);
@@ -34,6 +37,9 @@
         font-style: normal;
       }
     }
+    @media (min-width: $screen_md) {
+      margin-bottom: 0;
+    }
   }
 
   &__controls {
@@ -42,7 +48,7 @@
       display: flex;
       flex-direction: column;
       width: 175px;
-      right: 0;
+      right: 50px;
       height: 325px;
       top: 80px;
       justify-content: space-between;
@@ -79,6 +85,13 @@
   }
 
   @media (min-width: $screen_md) {
-    padding-top: 80px;
+    @include curved-border(calc(100% + 74px), 0px);
+    @include wrapper(margin, -50px);
+    @include wrapper($size: 50px);
+    margin-bottom: 74px;
+    padding-top: 78px;
+    padding-bottom: 43px;
+    background: transparent url("../img/review@1x.jpg") 0 50% no-repeat;
+    background-size: contain;
   }
 }

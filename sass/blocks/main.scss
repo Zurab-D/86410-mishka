@@ -1,24 +1,43 @@
 .main {
   @include wrapper();
+
   &__title {
     margin-left: -30px;
     margin-right: -30px;
     margin-bottom: 30px;
     padding: 74px 0 79px;
-    background-color: #f1f1f1;
+    background-color: $color-bg;
     @include border-top();
     @include bold-text($size: 27px, $color: #000);
     text-align: center;
+    @media (min-width: $screen_md) {
+      margin-bottom: 86px;
+      padding-top: 106px;
+      font-size: 43px;
+      line-height: 50px;
+      @include wrapper(margin, -50px);
+    }
   }
+
   &--form &__title {
     margin-bottom: 23px;
+    @media (min-width: $screen_md) {
+          margin-bottom: 80px;
+    }
   }
+
   &__text {
     margin-bottom: 23px;
     font-size: 13px;
     line-height: 24px;
+    @media (min-width: $screen_md) {
+      margin-bottom: 74px;
+      font-size: 17px;
+      line-height: 30px;
+    }
   }
-  &--index {}
-  &--form {}
-  &--catalog {}
+
+  @media (min-width: $screen_md) {
+    @include wrapper($size: 50px);
+  }
 }

@@ -32,16 +32,20 @@
 } */
 
 
-@mixin curved-border() {
+@mixin curved-border($top: 100%, $padding-size: 30px) {
   position: relative;
   &:after {
     content: '';
     position: absolute;
     height: 5px;
-    width: calc(100% + 60px);
+    width: calc(100% + #{$padding-size * 2});
+    left: -$padding-size;
+
+    /*width: calc(100%);
+    left: 0;*/
+
     background-color: red;
-    top: 100%;
-    left: -30px;
+    top: $top;
     z-index: 9999;
   }
 }

@@ -9,22 +9,35 @@
   <body>
     <header class="page-header">
       <h1 class="page-header__title">Мишка - магазин товаров ручной выделки</h1>
-      <a class="page-header__logo" href="index.html">
-        <span class="page-header__helper"></span>
-        <img src="img/logo-mobile.svg">
-      </a>
-      <nav class="main-nav  main-nav--no-js">
-        <span class="main-nav__toggler"><span></span></span>
-        <div class="main-nav__wrapper">
-          <ul>
-            <li><a href="catalog.html">Каталог товаров</a></li>
-            <li><a>Вязание на заказ</a></li>
-            <li><a href="#">Новые поступления</a></li>
-            <li><a href="#">Распродажа</a></li>
-          </ul>
+      <p class="page-header__info">Бесплатная доставка по России</p>
+      <div class="page-header__column  page-header__column--logo"></div>
+      <div class="page-header__column  page-header__column--search"></div>
+      <div class="page-header__column  page-header__column--basket"></div>
+      <div class="page-header__wrpper  page-header--row">
+        <a  href="index.html" class="page-header__logo  page-header--cell">
+          <span class="page-header__helper"></span>
+          <img src="img/logo-mobile.svg">
+        </a>
+        <div class="page-header__search  page-header--cell">
+          <a href=""></a>
         </div>
-      </nav>
+        <div class="page-header__basket  page-header--cell">
+          <p class="page-header__basket-text">Корзина: <span>Пока пуста</span></p>
+        </div>
+      </div>
     </header>
+
+    <nav class="main-nav  main-nav--no-js">
+      <span class="main-nav__toggler"><span></span></span>
+      <div class="main-nav__wrapper">
+        <ul>
+          <li><a href="catalog.html">Каталог товаров</a></li>
+          <li><a>Вязание на заказ</a></li>
+          <li class="hide-on-md"><a href="#">Новые поступления</a></li>
+          <li class="hide-on-md"><a href="#">Распродажа</a></li>
+        </ul>
+      </div>
+    </nav>
 
 
 
@@ -54,7 +67,7 @@
         <div class="form__fields-group  form__fields-group--fio">
           <h3>ФИО</h3>
           <label>Имя:<input type="text" name="first-name" placeholder="Введите ваше имя*" required></label>
-          <label>Фамилия:<input type="text" name="last-name" placeholder="Укажите фамилию" required></label>
+          <label>Фамилия:<input type="text" name="last-name" placeholder="Укажите фамилию*" required></label>
           <label>Отчество:<input type="text" name="fathers-name" placeholder="Отчество, если желаете"></label>
         </div>
 
@@ -73,21 +86,23 @@
           <textarea name="text" id="text" cols="30" rows="10"  placeholder="Опишите все ваши пожелания к заказу"></textarea>
         </div>
 
-        <p class="form__remark">*Поля обязательны для заполнения</p>
-
-        <input class="form__submit" type="submit" value="Отправить заказ">
+        <div class="form__submit-group">
+          <p class="form__remark">*Поля обязательны для заполнения</p>
+          <input class="form__submit" type="submit" value="Отправить заказ">
+        </div>
       </form>
     </main>
 
 
 
     <footer class="footer">
-      <ul class="socials">
+      <div class="footer__logo  footer--item"></div>
+      <ul class="socials  footer--item">
         <li class="socials__item  socials__item--instagram">Instagram</li>
         <li class="socials__item  socials__item--facebook">Facebook</li>
         <li class="socials__item  socials__item--twitter">Twitter</li>
       </ul>
-      <div class="footer__developer"><a href="#">Разработано</div>
+      <div class="footer__developer  footer--item"><a href="#">Разработано</div>
     </footer>
 
 

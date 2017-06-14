@@ -1,12 +1,20 @@
 .footer {
   @include wrapper();
-  background-color: #f1f1f1;
+  background-color: $color-bg;
+
+  &__logo {
+    display: none;
+    @media (min-width: $screen_md) {
+      display: block;
+      flex-basis: calc((100% - 140px)/2);
+    }
+  }
+
   &__developer {
     position: relative;
+    display: flex;
     height: 80px;
-    padding-top: 26px;
     line-height: 19px;
-    padding-left: 38px;
     overflow-x: hidden;
     &:before {
       content: '';
@@ -19,10 +27,52 @@
       background-color: #e5e5e5;
     }
     a {
+      position: relative;
       text-decoration: none;
       color: #000;
       font-size: 19px;
       font-weight: bold;
+
+      min-width: 182px;
+      flex-basis: 57%;
+      margin: auto;
+
+      &:after {
+        content: '';
+        position: absolute;
+        width: 27px;
+        height: 34px;
+        right: 0;
+        top: -6px;
+        @include outline();
+      }
     }
+
+    @media (min-width: $screen_md) {
+      flex-basis: calc((100% - 140px)/2);
+      &:before {
+        content: none;
+      }
+    }
+  }
+
+  &--item {
+    @media (min-width: $screen_md) {
+      &, &.socials {
+        margin: auto 40px;
+        white-space: initial;
+      }
+      &.socials {
+        width: 230px;
+      }
+    }
+  }
+
+  @media (min-width: $screen_md) {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0;
+    height: 143px;
   }
 }

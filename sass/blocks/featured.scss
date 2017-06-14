@@ -2,7 +2,7 @@
   position: relative;
   padding-top: 28px;
   padding-bottom: 38px;
-  @include border($type:bottom, $color:red);
+  // @include border($type:bottom, $color:red);
 
   &__title {
     margin-bottom: 3px;
@@ -22,7 +22,7 @@
     margin-bottom: 21px;
     @media (min-width: $screen_md) {
       position: absolute;
-      // width: 100px;
+      margin-right: 28px;
       top: 36px;
       right: 0;
       text-align: center;
@@ -76,4 +76,8 @@
   }
 
   @include curved-border();
+
+  @media (min-width: $screen_md) {
+    @include curved-border($padding-size: 50px);
+  }
 }

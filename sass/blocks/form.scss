@@ -2,36 +2,26 @@
   margin-bottom: 55px;
 
   &__fields-group {
-    ::-webkit-input-placeholder {
-      color: #d2d2d2;
-    }
-    :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-      color: #d2d2d2;
-      opacity: 1;
-    }
-    ::-moz-placeholder { /* Mozilla Firefox 19+ */
-      color: #d2d2d2;
-      opacity: 1;
-    }
-    :-ms-input-placeholder { /* Internet Explorer 10-11 */
-      color: #909;
-    }
-    ::-ms-input-placeholder { /* Microsoft Edge */
-      color: #d2d2d2;
-    }
+    @include placeholder();
+
     h3 {
       position: relative;
       font-weight: bold;
       font-size: 17px;
       line-height: 16px;
       color: $color-colored;
+      @media (min-width: $screen_md) {
+        position: absolute;
+        left: 0px;
+        text-transform: uppercase;
+      }
     }
 
     h3:after {
       content: '';
       position: absolute;
       display: block;
-      width: 198px;
+      width: calc(100% - 50px);
       height: 1px;
       background-color: #63d1bb;
       top: 50%;
@@ -39,7 +29,16 @@
       right: 0;
     }
 
+    &--email h3:after {
+      width: calc(100% - 70px);
+    }
+
+    &--color h3:after {
+      width: calc(100% - 60px);
+    }
+
     label {
+      position: relative;
       display: block;
       min-height: 60px;
       @include bold-text($size: 17px, $height: 18px);
@@ -58,12 +57,15 @@
       color: #d2d2d2;
       border: none;
       outline: none;
-      border-bottom: 1px solid #000;
+      border-bottom: 2px solid #000;
     }
 
     &--type, &--color {
       label {
         margin-left: 63px;
+        @media (min-width: $screen_md) {
+          margin-left: 0;
+        }
       }
     }
 
@@ -71,51 +73,141 @@
       h3 {
         margin-bottom: 35px;
       }
+
+      & label {
+        @media (min-width: $screen_md) {
+          margin-bottom: 17px;
+        }
+      }
+
+      @media (min-width: $screen_md) {
+          margin-bottom: 26px;
+      }
     }
 
     &--color {
+      @media (min-width: $screen_md) {
+        padding-top: 63px;
+        padding-bottom: 11px;
+        margin-bottom: 66px;
+      }
+    }
+
+    &.form__fields-group--color {
       h3 {
         margin-bottom: 37px;
       }
       label {
         min-height: 61px;
       }
+      @media (min-width: $screen_md) {
+        background-color: $color-bg;
+        padding-left: 277px;
+        @include wrapper(margin, -50px);
+      }
     }
-
-    &--color-list {}
 
     &--fio {
       h3 {
         margin-bottom: 28px;
       }
+      label {
+        @media (min-width: $screen_md) {
+          margin-bottom: 17px;
+          input[type="text"] {
+            position: absolute;
+            right: 0;
+            top: -18px;
+            width: calc(100% - 115px);
+            color: #000;
+          }
+          &:first-of-type {
+            input[type="text"] {
+              width: calc(100% - 69px);
+            }
+          }
+        }
+      }
+    }
+    &.form__fields-group--fio {
+      @media (min-width: $screen_md) {
+        margin-left: 165px;
+        margin-bottom: 23px;
+      }
     }
 
-    &--phone,
-    &--email,
-    &--additional {
+    &.form__fields-group--phone,
+    &.form__fields-group--email,
+    &.form__fields-group--additional {
       padding-top: 10px;
       input[type="text"] {
         padding-top: 0;
       }
       label {
         min-height: 40px;
+        position: static;
+      }
+      @media (min-width: $screen_md) {
+        margin-left: 165px;
+      }
+    }
+    &.form__fields-group--phone,
+    &.form__fields-group--email {
+      @media (min-width: $screen_md) {
+        background-color: $color-bg;
+        padding-top: 28px;
+        padding-left: 266px;
+        @include wrapper(margin, -50px);
+        h3 {
+          margin-top: 42px;
+        }
+        input[type="text"] {
+          background-color: transparent;
+          @include placeholder(#c7c7c7);
+          color: #000;
+          margin-bottom: 0;
+          margin-left: -50px;
+        }
       }
     }
 
-    &--email {}
+    &.form__fields-group--email {
+      padding-top: 0;
+      padding-bottom: 50px;
+    }
 
-    &--additional {}
+    &.form__fields-group--additional {
+      h3 {
+        @media (min-width: $screen_md) {
+          margin-top: 59px;
+        }
+      }
+
+      @media (min-width: $screen_md) {
+        margin-bottom: 49px;
+      }
+    }
+
+
+    @media (min-width: $screen_md) {
+      margin-left: 227px;
+    }
   }
 
   textarea {
     padding: 15px;
     width: 100%;
-    max-width: 260px;
+    // max-width: 260px;
     height: 142px;
     font-size: 17px;
     line-height: 18px;
     border: 2px solid #444;
     outline: none;
+    @media (min-width: $screen_md) {
+      padding: 8px;
+      font-size: 19px;
+      line-height: 28px;
+    }
   }
 
   &__remark {
@@ -123,15 +215,25 @@
     margin-bottom: 32px;
     font-size: 14px;
     line-height: 16px;
+    @media (min-width: $screen_md) {
+      font-size: 17px;
+      line-height: 24px
+    }
   }
 
   &__submit {
     @include btn-wide($height: 16px);
     background-color: #fff;
-  }
-
-  label {
-    position: relative;
+    @media (min-width: $screen_md) {
+      &-group {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+      height: 50px;
+      order: -1;
+      width: 228px;
+    }
   }
 
   input[type="radio"] + label:before,
@@ -139,12 +241,15 @@
     content: '';
     position: absolute;
     left: -62px;;
-    top: -50%;
-    transform: translateY(50%);
-    width: 37px;
-    height: 37px;
+    // top: -50%;
+    // transform: translateY(50%);
+    top: 0;
+    transform: translateY(-25%);
+    width: 50px;
+    height: 50px;
     border: 2px solid #444;
   }
+
   input[type="radio"] + label:before {
     border-radius: 50%;
   }
@@ -152,27 +257,42 @@
   input[type="radio"]:checked + label:after {
     content: '';
     position: absolute;
-    left: -51.5px;
-    top: -1px;
-    width: 16px;
-    height: 16px;
-    border: 8px solid $color-colored;
+    left: -48px;
+    top: 1.5px;
+    width: 22px;
+    height: 22px;
+    border: 11px solid $color-colored;
     border-radius: 50%;
   }
 
-
   input[type="checkbox"]:checked + label:after {
     content: '';
-    width: 20px;
-    height:10px;
+    width: 30px;
+    height: 15px;
     position: absolute;
-    left: -54px;;
-    top: 0;
+    left: -52px;;
+    top: 1px;
     border: 2px solid #000;
     border-top: none;
     border-right: none;
     background: transparent;
     opacity: 1;
     transform: rotate(-45deg);
+  }
+
+  &__color-list {
+    @media (min-width: $screen_md) {
+      display: flex;
+      flex-wrap: wrap;
+      li {
+        width: 50%;
+        height: 77px;
+      }
+    }
+  }
+
+  @media (min-width: $screen_md) {
+    position: relative;
+    margin-bottom: 34px;
   }
 }

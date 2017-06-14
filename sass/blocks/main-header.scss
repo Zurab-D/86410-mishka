@@ -1,6 +1,7 @@
 .main-header {
   position: relative;
   @include wrapper(margin, -30px);
+
   &__title {
     position: absolute;
     @include wrapper();
@@ -20,9 +21,11 @@
       line-height: 50px;
     }
   }
+
   &__img {
     position: relative;
     height: 284px;
+    background-color: #f9f9f9;
     overflow: hidden;
     z-index: 0;
     img {
@@ -36,11 +39,13 @@
       }
     }
     @media (min-width: $screen_md) {
-      height: 565px;
+      height: 667px;
     }
   }
+
   &__categories {
     &-item {
+      position: relative;
       display: block;
       @include wrapper();
       padding-top: 27px;
@@ -59,10 +64,32 @@
       &--active {
         background-color: $color-colored;
       }
+      :before {
+        position: absolute;
+        content: '';
+        width: 62px;
+        height: 62px;
+        @include outline();
+        right: 27px;
+        top: 50%;
+        transform: translateY(-50%);
+        @media (min-width: $screen_md) {
+          right: 34px;
+        }
+      }
+      @media (min-width: $screen_md) {
+        flex-basis: 50%;
+      }
     }
     @media (min-width: $screen_md) {
       display: flex;
-      @include wrapper();
+      @include wrapper($size: 50px);
+      position: absolute;
+      bottom: 0;
     }
+  }
+
+  @media (min-width: $screen_md) {
+    @include wrapper(margin, -50px);
   }
 }

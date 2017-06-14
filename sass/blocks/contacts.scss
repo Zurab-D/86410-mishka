@@ -1,33 +1,99 @@
 .contacts {
+  position: relative;
   padding-top: 42px;
+
   &__title {
     margin-bottom: 29px;
     font-size: 18px;
     color: #000;
+    @media (min-width: $screen_md) {
+      margin-bottom: 50px;
+      font-size: 43px;
+      line-height: 50px;
+    }
   }
+
   &__items {
     li {
       margin-bottom: 30px;
       line-height: 30px;
+      @media (min-width: $screen_md) {
+        font-size: 17px;
+        flex-basis: 50%;
+        &:first-of-type .contacts__item-value:after {
+          content: '';
+          position: absolute;
+          width: 100%;
+          height: 1px;
+          background-color: #63d1bb;
+          left: 0;
+          bottom: 0;
+        }
+      }
+    }
+    @media (min-width: $screen_md) {
+      display: flex;
     }
   }
+
   &__item-label {
     display: inline-block;
+    @media (min-width: $screen_md) {
+      vertical-align: top;
+    }
   }
+
   &__item-value {
     display: inline-block;
     width: 70%;
     float: right;
+    @media (min-width: $screen_md) {
+      position: relative;
+      vertical-align: top;
+      margin-left: 25px;
+      float: initial;
+      width: initial;
+    }
   }
+
   &__map {
     margin-top: 126px;
     margin-bottom: 40px;
     height: 457px;
     /* @include outline(); */
     @include wrapper(margin, -30px);
+    background: silver url(../img/map-mobile@1x.jpg) no-repeat;
+    background-size: cover;
+    @media (min-width: $screen_md) {
+      margin-top: 25px;
+      margin-bottom: 56px;
+      @include wrapper(margin, -50px);
+    }
   }
+
   &__btn {
     margin-bottom: 40px;
     @include btn-wide($size: 18px);
+    @media (min-width: $screen_md) {
+      margin-bottom: 57px;
+    }
+    &-container {
+      @media (min-width: $screen_md) {
+        margin: 0px 210px;
+      }
+    }
+  }
+
+  @media (min-width: $screen_md) {
+    padding-top: 82px;
+    &:before {
+      content: '';
+      position: absolute;
+      width: 47px;
+      height: 81px;
+      right: 53px;
+      top: 55px;
+      @include outline();
+    }
   }
 }

@@ -1,17 +1,29 @@
-html,
-body {
-    height: 100%;
-}
-
 .page-header {
   position: relative;
   @include border($type:bottom);
+
+  &__info {
+    display: none;
+    @media (min-width: $screen_md) {
+      display: inline-block;
+      position: absolute;
+      // top: -41px;
+      bottom: -41px;
+      right: 50px;
+      max-width: 50%;
+      text-align: right;
+      z-index: 1;
+    }
+  }
+
   &__helper {
     @include img-vert-center-helper();
   }
+
   &__title {
     @include visually-hidden();
   }
+
   &__logo {
     display: block;
     height: 78px;
@@ -22,9 +34,13 @@ body {
       height: 35px;
       vertical-align: middle;
     }
+    @media (min-width: $screen_md) {
+      height: 88px;
+    }
   }
 
   &__search {
+    position: relative;
     display: none;
     border-left: 1px solid $color-border;
     input {
@@ -32,16 +48,39 @@ body {
       border: none;
       outline: none;
     }
+    a {
+      width: 19px;
+      height: 19px;
+      display: block;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      @include outline();
+    }
   }
 
   &__basket {
+    position: relative;
     display: none;
     border-left: 1px solid $color-border;
     &-text {
-      padding-left: 84px;
+      padding-left: 80px;
+      padding-right: 50px;
       font-weight: bold;
       font-size: 17px;
       line-height: 24px;
+      text-align: right;
+    }
+    &:before {
+      content: '';
+      position: absolute;
+      width: 21px;
+      height: 18px;
+      left: 30px;
+      top: 50%;
+      transform: translateY(-50%);
+      @include outline();
     }
   }
 

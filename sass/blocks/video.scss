@@ -3,13 +3,37 @@
   margin-bottom: 58px;
 
   h2 {
+    position: relative;
     margin: 24px 0;
     padding-left: 90px;
     @include bold-text($color: #000);
+    &:before {
+      position: absolute;
+      content: '';
+      width: 32px;
+      height: 22px;
+      left: 33px;
+      top: 50%;
+      transform: translateY(-50%);
+      @include outline();
+      @media (min-width: $screen_md) {
+        left: 41px;
+      }
+    }
+    @media (min-width: $screen_md) {
+      padding-left: 106px;
+      margin: 18px 0 34px;
+    }
   }
 
   &__media {
     margin-bottom: 23px;
+    @media (min-width: $screen_md) {
+      // margin-bottom: 16px;
+      width: 100%;
+      height: auto;
+      order: -1;
+    }
   }
 
   &__text-wrapper {
@@ -17,14 +41,25 @@
   }
 
   p {
-    /* margin: 0 35px 26px; */
     margin-bottom: 26px;
     font-size: 13px;
     line-height: 24px;
+    @media (min-width: $screen_md) {
+      margin-bottom: 38px;
+    }
   }
 
   &__btn {
     @include btn-wide($padding: 15px);
     margin-bottom: 32px;
+    @media (min-width: $screen_md) {
+      margin-bottom: 45px;
+    }
+  }
+
+  @media (min-width: $screen_md) {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 63px;
   }
 }
