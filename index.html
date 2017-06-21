@@ -9,34 +9,33 @@
   <body>
     <header class="page-header">
       <h1 class="page-header__title">Мишка - магазин товаров ручной выделки</h1>
-      <div class="page-header__column  page-header__column--logo"></div>
-      <div class="page-header__column  page-header__column--search"></div>
-      <div class="page-header__column  page-header__column--basket"></div>
-      <div class="page-header__wrpper  page-header--row">
-        <a class="page-header__logo  page-header--cell">
-          <span class="page-header__helper"></span>
-          <img src="img/logo-mobile.svg">
-        </a>
-        <div class="page-header__search  page-header--cell">
-          <input type="search">
+      <p class="page-header__info">Бесплатная доставка по России</p>
+      <div class="page-header__wrapper">
+        <div class="page-header__inner">
+          <a class="page-header__logo  page-header--item">
+            <img src="img/logo-mobile.svg" alt="logo">
+          </a>
+          <div class="page-header__search  page-header--item">
+            <a href=""></a>
+          </div>
+          <div class="page-header__basket  page-header--item">
+            <p class="page-header__basket-text">Корзина: <span>Пока пуста</span></p>
+          </div>
         </div>
-        <div class="page-header__basket  page-header--cell">
-          <p class="page-header__basket-text">Корзина: <span>Пока пуста</span></p>
-        </div>
+
+        <nav class="main-nav  main-nav--no-js">
+          <span class="main-nav__toggler"><span></span></span>
+          <div class="main-nav__wrapper">
+            <ul>
+              <li><a href="catalog.html">Каталог товаров</a></li>
+              <li><a href="form.html">Вязание на заказ</a></li>
+              <li class="hide-on-md"><a href="#">Новые поступления</a></li>
+              <li class="hide-on-md"><a href="#">Распродажа</a></li>
+            </ul>
+          </div>
+        </nav>
       </div>
     </header>
-
-    <nav class="main-nav  main-nav--no-js">
-      <span class="main-nav__toggler"><span></span></span>
-      <div class="main-nav__wrapper">
-        <ul>
-          <li><a href="catalog.html">Каталог товаров</a></li>
-          <li><a href="form.html">Вязание на заказ</a></li>
-          <li class="hide-on-md"><a href="#">Новые поступления</a></li>
-          <li class="hide-on-md"><a href="#">Распродажа</a></li>
-        </ul>
-      </div>
-    </nav>
 
 
     <main class="main  main--index">
@@ -46,8 +45,8 @@
           <img src="img/hero-mobile@1x.jpg" alt="hero-mobile">
         </div>
         <ul class="main-header__categories">
-          <li class="main-header__categories-item  main-header__categories-item--active"><span>Предметы интерьера</span></li>
-          <li class="main-header__categories-item"><span>Детские игрушки</span></li>
+          <li class="main-header__categories-item  main-header__categories-item--active"><span>Предметы<br>интерьера</span></li>
+          <li class="main-header__categories-item"><span>Детские<br>игрушки</span></li>
         </ul>
       </header>
 
@@ -56,7 +55,7 @@
         <p class="featured__subtitle">ТОВАР <br class="show-on-md">НЕДЕЛИ</p>
         <div class="featured__content">
           <p class="featured__text  featured__content-item">Экологически чистая пряжа, ручная работа. Доступны в шести расцветках, и трех размерах</p>
-          <ul class="features">
+          <ul class="features  featured__content-item">
             <li><span class="features__item-name">Цвет:</span><span class="features__item-value">«Тиффани»/серый</span></li>
             <li><span class="features__item-name">Диаметр:</span><span class="features__item-value">25 см</span></li>
             <li><span class="features__item-name">Высота:</span><span class="features__item-value">15 см</span></li>
@@ -73,7 +72,7 @@
         <h2 class="about__title">Коротко о нас:</h2>
         <ul class="about__items">
           <li class="about__item  about__item--eco">Экологически<br>чистые материалы</li>
-          <li class="about__item  about__item--scadinav">Скандинавский стиль<br>по российской цене</li>
+          <li class="about__item  about__item--scandinav">Скандинавский стиль<br>по российской цене</li>
           <li class="about__item  about__item--4likes">Увеличивает лайки<br>на фотографиях</li>
           <li class="about__item  about__item--handmade">Связано вручную с<br>любовью и умилением</li>
           <li class="about__item  about__item--supporter">Поддержка отечественного производителя</li>
@@ -89,12 +88,8 @@
         </blockquote>
         <div class="review__controls">
           <div class="review__nav">
-            <a href="#" class="review__btn  review__btn--prev">
-                <!--<img src="img/icon-left-arrow.svg" alt="">-->
-            </a>
-            <a href="#" class="review__btn  review__btn--next">
-                <!--<img src="img/icon-right-arrow.svg" alt="">-->
-            </a>
+            <a href="#" class="review__btn  review__btn--prev"></a>
+            <a href="#" class="review__btn  review__btn--next"></a>
           </div>
           <a href="#" class="review__btn  review__btn--write">Написать</a>
         </div>
@@ -108,18 +103,21 @@
         </ul>
 
         <div class="contacts__map" id="map"></div>
-        <a href="#" class="contacts__btn">Напишите нам</a>
+        <div class="contacts__btn-container">
+          <a href="#" class="contacts__btn">Напишите нам</a>
+        </div>
       </section>
     </main>
 
 
     <footer class="footer">
-      <ul class="socials">
+      <div class="footer__logo  footer--item"></div>
+      <ul class="socials  footer--item">
         <li class="socials__item  socials__item--instagram">Instagram</li>
         <li class="socials__item  socials__item--facebook">Facebook</li>
         <li class="socials__item  socials__item--twitter">Twitter</li>
       </ul>
-      <div class="footer__developer"><a href="#">Разработано</div>
+      <div class="footer__developer  footer--item"><a href="#">Разработано</a></div>
     </footer>
 
 

@@ -1,9 +1,6 @@
 .review {
-  @include outline();
   position: relative;
   padding-bottom: 48px;
-  @include border($type:bottom, $color:red);
-
   @include curved-border();
 
   &__title {
@@ -15,6 +12,13 @@
     @media (min-width: $screen_md) {
       font-size: 43px;
       line-height: 50px;
+      margin-bottom: 48px;
+    }
+    @media (min-width: $screen_lg) {
+      margin-bottom: 54px;
+      font-size: $header-size-lg;
+      // line-height: $header-height-lg;
+      line-height: 44px;
     }
   }
 
@@ -23,6 +27,14 @@
     p {
       margin-bottom: 23px;
       line-height: 30px;
+      @media (min-width: $screen_md) {
+        font-size: 17px;
+        line-height: 30px;
+        margin-bottom: 55px;
+      }
+      @media (min-width: $screen_lg) {
+        margin-bottom: 35px;
+      }
     }
     footer {
       @include bold-text($height: 31px);
@@ -34,6 +46,9 @@
         font-style: normal;
       }
     }
+    @media (min-width: $screen_md) {
+      margin-bottom: 0;
+    }
   }
 
   &__controls {
@@ -42,10 +57,13 @@
       display: flex;
       flex-direction: column;
       width: 175px;
-      right: 0;
+      right: 50px;
       height: 325px;
-      top: 80px;
+      top: 78px;
       justify-content: space-between;
+    }
+    @media (min-width: $screen_lg) {
+      right: 0;
     }
   }
 
@@ -54,6 +72,10 @@
     margin-bottom: 38px;
     @media (min-width: $screen_md) {
       order: 1;
+      margin-bottom: -3px;
+    }
+    @media (min-width: $screen_lg) {
+      margin-bottom: 47px;
     }
   }
 
@@ -73,12 +95,35 @@
       background-image: url("../img/icon-right-arrow.svg");
     }
     &--write {
-      @include btn-wide($size: 18px);
+      @include btn-wide($size: 17px);
       background-color: #fff;
+      height: initial;
+    }
+    @media (min-width: $screen_lg) {
+      &--prev,
+      &--next {
+        border: 0;
+      }
     }
   }
 
   @media (min-width: $screen_md) {
-    padding-top: 80px;
+    @include wrapper($size: 50px);
+    @include wrapper(margin, -50px);
+    @include curved-border(calc(100% + 74px), 0px);
+    margin-bottom: 74px;
+    padding-top: 75px;
+    padding-bottom: 43px;
+    background: transparent url("../img/review@1x.jpg") 0 50% no-repeat;
+    background-size: contain;
+  }
+
+  @media (min-width: $screen_lg) {
+    @include wrapper($size: 100px);
+    // @include wrapper(margin, -100px);
+    width: 1050px;
+    margin: 0 auto;
+    padding-left: $section-shift-lg;
+    height: 457px;
   }
 }

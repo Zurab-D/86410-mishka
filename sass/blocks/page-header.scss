@@ -1,67 +1,128 @@
-html,
-body {
-    height: 100%;
-}
-
 .page-header {
   position: relative;
   @include border($type:bottom);
-  &__helper {
-    @include img-vert-center-helper();
+
+  &__info {
+    display: none;
+    @media (min-width: $screen_md) {
+      display: inline-block;
+      position: absolute;
+      bottom: -41px;
+      right: 50px;
+      max-width: 50%;
+      text-align: right;
+      z-index: 1;
+    }
+    @media (min-width: $screen_lg) {
+      right: 0px;
+    }
   }
+
   &__title {
     @include visually-hidden();
   }
-  &__logo {
+
+  &__wrapper {
     display: block;
-    height: 78px;
+    @media (min-width: $screen_md) {
+      height: 88px;
+    }
+    @media (min-width: $screen_lg) {
+      display: flex;
+      height: 88px;
+    }
+  }
+
+  &__inner {
+    @media (min-width: $screen_md) {
+      display: flex;
+      height: 88px;
+    }
+    @media (min-width: $screen_lg) {
+      order: 1;
+      flex-grow: 9;
+    }
+  }
+
+  &__logo {
+    display: flex;
+    flex-grow: 1;
     text-align: center;
     text-decoration: none;
+    height: 80px;
     img {
-      margin-left: -5px;
+      margin: auto;
       height: 35px;
-      vertical-align: middle;
+      @media (min-width: $screen_md) {
+        margin-left: 50px;
+      }
+      @media (min-width: $screen_lg) {
+        margin: auto;
+      }
+    }
+    @media (min-width: $screen_md) {
+      height: initial;
     }
   }
 
   &__search {
+    position: relative;
     display: none;
+    // flex-basis: 84px;
+    width: 84px;
     border-left: 1px solid $color-border;
     input {
       width: 95%;
       border: none;
       outline: none;
     }
+    a {
+      width: 19px;
+      height: 19px;
+      display: block;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      @include outline();
+    }
   }
 
   &__basket {
+    position: relative;
     display: none;
     border-left: 1px solid $color-border;
     &-text {
-      padding-left: 84px;
+      padding-left: 80px;
+      padding-right: 50px;
+      height: 25px;
       font-weight: bold;
       font-size: 17px;
       line-height: 24px;
+      text-align: right;
+      @media (min-width: $screen_md) {
+        margin: auto;
+        padding-right: 45px;
+      }
+      @media (min-width: $screen_lg) {
+        margin: initial;
+        padding: 0;
+      }
     }
-  }
-
-  &--row {
-    @media (min-width: $screen_md) {
-      display: table-row;
-    }
-  }
-
-  &--cell {
-    @media (min-width: $screen_md) {
-      display: table-cell;
-      vertical-align: middle;
+    &:before {
+      content: '';
+      position: absolute;
+      width: 21px;
+      height: 18px;
+      left: 30px;
+      top: 50%;
+      transform: translateY(-50%);
+      @include outline();
     }
   }
 
   &__column {
     display: table-column;
-    &--logo {
-    }
     &--search {
       width: 83px;
     }
@@ -70,9 +131,30 @@ body {
     }
   }
 
-  @media (min-width: $screen_md) {
-    display: table;
-    width: 100%;
+  &--item {
+    @media (min-width: $screen_md) {
+      display: flex;
+      &.page-header__basket {
+        display: flex;
+        // flex-basis: 41%;
+        width: 41%;
+      }
+      @media (min-width: $screen_lg) {
+        &.page-header__basket {
+          // flex-basis: 367px;
+          // width: 367px;
+          justify-content: flex-end;
+          align-items: center;
+          width: 267px;
+        }
+      }
+    }
   }
 
+  @media (min-width: $screen_lg) {
+    // padding: 0 50px;
+    width: 1050px;
+    margin: 0 auto;
+    padding: 0;
+  }
 }

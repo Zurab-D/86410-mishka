@@ -4,9 +4,14 @@
     margin-right: -30px;
     margin-bottom: 30px;
     padding: 74px 0 79px;
-    background-color: #f1f1f1;
+    background-color: $color-bg;
     @include border-top();
     @include bold-text($size: 27px, $color: #000);
     text-align: center;
+  }
+  @media (min-width: $screen_lg) {
+    @include width-fix-lg();
+    display: flex;
+    justify-content: space-between;
   }
 }

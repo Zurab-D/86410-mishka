@@ -1,6 +1,8 @@
 .main-header {
   position: relative;
+  background-color: #f9f9f9;
   @include wrapper(margin, -30px);
+
   &__title {
     position: absolute;
     @include wrapper();
@@ -15,14 +17,23 @@
     text-transform: none;
     z-index: 10;
     @media (min-width: $screen_md) {
-      top: 94px;
+      @include wrapper($size: 50px);
+      top: 155px;
       font-size: 43px;
       line-height: 50px;
     }
+    @media (min-width: $screen_lg) {
+      @include wrapper($size: 100px);
+      top: 154px;
+      font-size: $header-size-lg;
+      line-height: $header-height-lg;
+    }
   }
+
   &__img {
     position: relative;
-    height: 284px;
+    height: 281px;
+    background-color: #f9f9f9;
     overflow: hidden;
     z-index: 0;
     img {
@@ -36,11 +47,19 @@
       }
     }
     @media (min-width: $screen_md) {
-      height: 565px;
+      height: 731px;
+      margin: 0 auto;
+    }
+    @media (min-width: $screen_lg) {
+      height: 731px;
+      width: 1050px;
+      margin: 0 auto;
     }
   }
+
   &__categories {
     &-item {
+      position: relative;
       display: block;
       @include wrapper();
       padding-top: 27px;
@@ -54,15 +73,57 @@
         line-height: 24px;
         color: #fff;
         width: 100px;
-
+        @media (min-width: $screen_md) {
+          line-height: 30px;
+        }
       }
       &--active {
         background-color: $color-colored;
       }
+      :before {
+        position: absolute;
+        content: '';
+        width: 62px;
+        height: 62px;
+        @include outline();
+        right: 27px;
+        top: 50%;
+        transform: translateY(-50%);
+        @media (min-width: $screen_md) {
+          right: 34px;
+        }
+      }
+      @media (min-width: $screen_md) {
+        // flex-basis: 50%;
+        width: 50%;
+        padding-left: 35px;
+        padding-top: 26px;
+      }
     }
+
     @media (min-width: $screen_md) {
+      position: absolute;
       display: flex;
-      @include wrapper();
+      @include wrapper($size: 50px);
+      width: 100%;
+      bottom: 0;
     }
+
+    @media (min-width: $screen_lg) {
+      // @include wrapper($size: 100px);
+      width: 1050px;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 0;
+    }
+  }
+
+  @media (min-width: $screen_md) {
+    @include wrapper(margin, -50px);
+  }
+
+  @media (min-width: $screen_lg) {
+    @include wrapper(margin, 0px);
+    margin-bottom: 25px;
   }
 }
