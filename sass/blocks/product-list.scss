@@ -9,4 +9,7 @@
     @include bold-text($size: 27px, $color: #000);
     text-align: center;
   }
+  @media (min-width: $screen_lg) {
+    @include width-fix-lg();
+  }
 }

@@ -8,6 +8,14 @@
     font-weight: bold;
     font-size: 25px;
     line-height: 34px;
+    @media (min-width: $screen_md) {
+      font-size: 43px;
+      line-height: 44px;
+    }
+    @media (min-width: $screen_lg) {
+      font-size: $header-size-lg;
+      line-height: $header-height-lg;
+    }
   }
 
   &__items {
@@ -39,16 +47,35 @@
       }
     }
     @media (min-width: $screen_md) {
-      flex-basis: 50%;
-      padding-top: 85px;
+      // flex-basis: 50%;
+      width: 50%;
+      padding-top: 81px;
       padding-bottom: 31px;
       font-size: 20px;
       line-height: 22px;
+      &--eco { order: 0; }
+      &--scandinav { order: 2; }
+      &--4likes { order: 4; }
+      &--handmade { order: 1; }
+      &--supporter { order: 3; }
+      &--gift-wrap { order: 5; }
+    }
+    @media (min-width: $screen_lg) {
+      padding-top: 81px;
     }
   }
 
   @media (min-width: $screen_md) {
     padding-top: 67px;
     margin-bottom: 53px;
+  }
+
+  @media (min-width: $screen_lg) {
+    width: 1050px;
+    margin: 0 auto;
+    padding-top: 71px;
+    padding-left: $section-shift-lg;
+    padding-right: $section-shift-lg;
+    margin-bottom: 57px;
   }
 }

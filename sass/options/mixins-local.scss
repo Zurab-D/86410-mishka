@@ -49,3 +49,15 @@
     z-index: 9999;
   }
 }
+
+
+@mixin width-fix-md {
+  width: 668px;
+  margin: 0 auto;
+}
+
+
+@mixin width-fix-lg {
+  width: 1050px;
+  margin: 0 auto;
+}

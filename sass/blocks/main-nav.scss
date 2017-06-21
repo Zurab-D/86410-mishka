@@ -1,6 +1,7 @@
 .main-nav {
   position: relative;
   top: 0;
+
   &__toggler {
     position: absolute;
     display: block;
@@ -26,13 +27,13 @@
       display: none;
     }
   }
+
   &__wrapper {
     display: none;
     li {
       @include border-top();
       padding-top: 26px;
       padding-bottom: 27px;
-      //vertical-align: middle;
       text-align: center;
       a {
         @include bold-text($color: #000);
@@ -42,10 +43,51 @@
           line-height: 24px;
         }
       }
+      @media (min-width: $screen_lg) {
+        a {
+          margin: auto 0;
+          height: 25px;
+        }
+        &:nth-child(1),
+        &:nth-child(2) {
+          a {
+            font-size: 17px;
+            line-height: 24px;
+          }
+        }
+        &:nth-child(odd) {
+          a {
+            margin-left: 50px;
+          }
+        }
+        &:nth-child(even) {
+          a {
+            margin-left: 35px;
+          }
+        }
+        &:nth-child(3),
+        &:nth-child(4) {
+          a {
+            margin-top: 18px;
+          }
+        }
+      }
       @media (min-width: $screen_md) {
         padding-top: 18px;
         padding-bottom: 19px;
         border: none;
+      }
+      @media (min-width: $screen_lg) {
+        padding: 0;
+        margin: auto;
+        display: flex;
+        margin: initial;
+        // flex-basis: 50%;
+        width: 50%;
+        height: 88px;
+        &:first-child {
+          border-right: 1px solid #ececec;
+        }
       }
     }
     ul {
@@ -53,12 +95,24 @@
         display: flex;
         justify-content: space-around;
       }
+      @media (min-width: $screen_lg) {
+        flex-wrap: wrap;
+        height: 200%;
+        margin-left: -50px;
+      }
     }
     @media (min-width: $screen_md) {
       display: block;
-      margin-right: 55%;
+      margin-right: 52%;
+      margin-left: -20px;
+
+    }
+    @media (min-width: $screen_lg) {
+      margin: 0;
+      height: 100%;
     }
   }
+
   &--no-js,
   &--open {
     .main-nav__wrapper {
@@ -71,7 +125,13 @@
     @include wrapper($size: 50px);
     background-color: transparent;
     width: 100%;
-    top: 89px;
+    top: 88px;
     z-index: 1;
+  }
+
+  @media (min-width: $screen_lg) {
+    position: static;
+    padding: 0;
+    width: 420px;
   }
 }

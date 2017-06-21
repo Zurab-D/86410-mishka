@@ -81,3 +81,10 @@ ul {
     display: inherit;
   }
 }
+
+
+.show-on-lg {
+  @media (min-width: $screen_lg) {
+    display: inherit;
+  }
+}

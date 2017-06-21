@@ -4,7 +4,7 @@
   &__fields-group {
     @include placeholder();
 
-    h3, .h3 {
+    h3, .form__field-label {
       position: relative;
       font-weight: bold;
       font-size: 17px;
@@ -18,7 +18,7 @@
     }
 
     h3:after,
-    .h3:after {
+    .form__field-label:after {
       content: '';
       position: absolute;
       display: block;
@@ -31,12 +31,12 @@
     }
 
     &--email h3:after,
-    &--email .h3:after {
+    &--email .form__field-label:after {
       width: calc(100% - 70px);
     }
 
     &--color h3:after,
-    &--color .h3:after {
+    &--color .form__field-label:after {
       width: calc(100% - 60px);
     }
 
@@ -52,12 +52,11 @@
       display: block;
       margin-bottom: 24px;
       padding-top: 17px;
-      padding-bottom: 14px;
+      padding-bottom: 12px;
       width: 100%;
       font-weight: normal;
       font-size: 17px;
-      line-height: 18px;
-      color: #d2d2d2;
+      line-height: 20px;
       border: none;
       outline: none;
       border-bottom: 2px solid #000;
@@ -73,7 +72,7 @@
     }
 
     &--type {
-      h3, .h3 {
+      h3, .form__field-label {
         margin-bottom: 35px;
       }
 
@@ -97,7 +96,7 @@
     }
 
     &.form__fields-group--color {
-      h3, .h3 {
+      h3, .form__field-label {
         margin-bottom: 37px;
       }
       label {
@@ -108,10 +107,13 @@
         padding-left: 277px;
         @include wrapper(margin, -50px);
       }
+      @media (min-width: $screen_lg) {
+        @include wrapper(margin, -100px);
+      }
     }
 
     &--fio {
-      h3, .h3 {
+      h3, .form__field-label {
         margin-bottom: 28px;
       }
       label {
@@ -150,7 +152,7 @@
         min-height: 40px;
         position: static;
       }
-      .h3 {
+      .form__field-label {
         display: block;
       }
       @media (min-width: $screen_md) {
@@ -159,13 +161,7 @@
     }
     &.form__fields-group--phone,
     &.form__fields-group--email {
-      @media (min-width: $screen_md) {
-        background-color: $color-bg;
-        padding-top: 28px;
-        padding-left: 266px;
-        @include wrapper(margin, -50px);
-      }
-      h3, .h3 {
+      h3, .form__field-label {
         @media (min-width: $screen_md) {
           margin-top: 42px;
         }
@@ -179,6 +175,15 @@
           margin-left: -50px;
         }
       }
+      @media (min-width: $screen_md) {
+        background-color: $color-bg;
+        padding-top: 28px;
+        padding-left: 266px;
+        @include wrapper(margin, -50px);
+      }
+      @media (min-width: $screen_lg) {
+        @include wrapper(margin, -100px);
+      }
     }
 
     &.form__fields-group--email {
@@ -189,7 +194,7 @@
     }
 
     &.form__fields-group--additional {
-      h3, .h3 {
+      h3, .form__field-label {
         @media (min-width: $screen_md) {
           margin-top: 59px;
         }

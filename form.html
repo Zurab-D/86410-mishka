@@ -10,34 +10,33 @@
     <header class="page-header">
       <h1 class="page-header__title">Мишка - магазин товаров ручной выделки</h1>
       <p class="page-header__info">Бесплатная доставка по России</p>
-      <div class="page-header__column  page-header__column--logo"></div>
-      <div class="page-header__column  page-header__column--search"></div>
-      <div class="page-header__column  page-header__column--basket"></div>
-      <div class="page-header__wrpper  page-header--row">
-        <a  href="index.html" class="page-header__logo  page-header--cell">
-          <span class="page-header__helper"></span>
-          <img src="img/logo-mobile.svg" alt="logo">
-        </a>
-        <div class="page-header__search  page-header--cell">
-          <a href=""></a>
+      <div class="page-header__wrapper">
+        <div class="page-header__inner">
+          <a href="index.html" class="page-header__logo  page-header--item">
+            <img src="img/logo-mobile.svg" alt="logo">
+          </a>
+          <div class="page-header__search  page-header--item">
+            <a href=""></a>
+          </div>
+          <div class="page-header__basket  page-header--item">
+            <p class="page-header__basket-text">Корзина: <span>Пока пуста</span></p>
+          </div>
         </div>
-        <div class="page-header__basket  page-header--cell">
-          <p class="page-header__basket-text">Корзина: <span>Пока пуста</span></p>
-        </div>
+
+        <nav class="main-nav  main-nav--no-js">
+          <span class="main-nav__toggler"><span></span></span>
+          <div class="main-nav__wrapper">
+            <ul>
+              <li><a href="catalog.html">Каталог товаров</a></li>
+              <li><a>Вязание на заказ</a></li>
+              <li class="hide-on-md"><a href="#">Новые поступления</a></li>
+              <li class="hide-on-md"><a href="#">Распродажа</a></li>
+            </ul>
+          </div>
+        </nav>
+
       </div>
     </header>
-
-    <nav class="main-nav  main-nav--no-js">
-      <span class="main-nav__toggler"><span></span></span>
-      <div class="main-nav__wrapper">
-        <ul>
-          <li><a href="catalog.html">Каталог товаров</a></li>
-          <li><a>Вязание на заказ</a></li>
-          <li class="hide-on-md"><a href="#">Новые поступления</a></li>
-          <li class="hide-on-md"><a href="#">Распродажа</a></li>
-        </ul>
-      </div>
-    </nav>
 
 
 
@@ -72,17 +71,17 @@
         </div>
 
         <div class="form__fields-group  form__fields-group--phone">
-          <label for="phone"><span class="h3">Тел</span></label>
+          <label for="phone"><span class="form__field-label">Тел</span></label>
           <input type="text" name="phone" id="phone" placeholder="+7 XXX XX XX*" required>
         </div>
 
         <div class="form__fields-group  form__fields-group--email">
-          <label for="email"><span class="h3">e-mail</span></label>
+          <label for="email"><span class="form__field-label">e-mail</span></label>
           <input type="text" name="email" id="email" placeholder="Ваш e-mail*" required>
         </div>
 
         <div class="form__fields-group  form__fields-group--additional">
-          <label for="text"><span class="h3">Доп</span></label>
+          <label for="text"><span class="form__field-label">Доп</span></label>
           <textarea name="text" id="text" cols="30" rows="10"  placeholder="Опишите все ваши пожелания к заказу"></textarea>
         </div>
 

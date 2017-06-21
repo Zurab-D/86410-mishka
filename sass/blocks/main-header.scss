@@ -1,5 +1,6 @@
 .main-header {
   position: relative;
+  background-color: #f9f9f9;
   @include wrapper(margin, -30px);
 
   &__title {
@@ -16,15 +17,22 @@
     text-transform: none;
     z-index: 10;
     @media (min-width: $screen_md) {
-      top: 94px;
+      @include wrapper($size: 50px);
+      top: 155px;
       font-size: 43px;
       line-height: 50px;
+    }
+    @media (min-width: $screen_lg) {
+      @include wrapper($size: 100px);
+      top: 154px;
+      font-size: $header-size-lg;
+      line-height: $header-height-lg;
     }
   }
 
   &__img {
     position: relative;
-    height: 284px;
+    height: 281px;
     background-color: #f9f9f9;
     overflow: hidden;
     z-index: 0;
@@ -39,7 +47,13 @@
       }
     }
     @media (min-width: $screen_md) {
-      height: 667px;
+      height: 731px;
+      margin: 0 auto;
+    }
+    @media (min-width: $screen_lg) {
+      height: 731px;
+      width: 1050px;
+      margin: 0 auto;
     }
   }
 
@@ -59,7 +73,9 @@
         line-height: 24px;
         color: #fff;
         width: 100px;
-
+        @media (min-width: $screen_md) {
+          line-height: 30px;
+        }
       }
       &--active {
         background-color: $color-colored;
@@ -78,18 +94,36 @@
         }
       }
       @media (min-width: $screen_md) {
-        flex-basis: 50%;
+        // flex-basis: 50%;
+        width: 50%;
+        padding-left: 35px;
+        padding-top: 26px;
       }
     }
+
     @media (min-width: $screen_md) {
+      position: absolute;
       display: flex;
       @include wrapper($size: 50px);
-      position: absolute;
+      width: 100%;
       bottom: 0;
+    }
+
+    @media (min-width: $screen_lg) {
+      // @include wrapper($size: 100px);
+      width: 1050px;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 0;
     }
   }
 
   @media (min-width: $screen_md) {
     @include wrapper(margin, -50px);
+  }
+
+  @media (min-width: $screen_lg) {
+    @include wrapper(margin, 0px);
+    margin-bottom: 25px;
   }
 }
