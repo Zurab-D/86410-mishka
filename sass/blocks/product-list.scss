@@ -11,5 +11,7 @@
   }
   @media (min-width: $screen_lg) {
     @include width-fix-lg();
+    display: flex;
+    justify-content: space-between;
   }
 }
