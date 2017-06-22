@@ -1,5 +1,5 @@
 .footer {
-  @include wrapper();
+  // @include wrapper();
   background-color: $color-bg;
 
   &__logo {
@@ -49,7 +49,7 @@
         @include outline();
       }
       @media (min-width: $screen_md) {
-        height: 12px;
+        height: initial;
         width: initial;
         margin: initial;
       }
@@ -66,8 +66,9 @@
     }
 
     @media (min-width: $screen_lg) {
-      width: 559px;
+      // width: 559px;
       padding-left: 157px;
+      padding-top: 5px;
     }
   }
 
@@ -89,24 +90,25 @@
       &.socials {
         // width: 200px;
         // margin-right: 10px;
-        padding: 0 70px;
+        padding: 0 100px;
       }
     }
   }
 
-  @media (min-width: $screen_md) {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 0;
-    height: 143px;
-    @include wrapper($size: 50px);
-  }
+  &__wrapper {
+    @media (min-width: $screen_md) {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 0;
+      height: 143px;
+      @include wrapper($size: 50px);
+    }
 
-  @media (min-width: $screen_lg) {
-    // @include wrapper($size: 100px);
-    padding: 0 100px;
-    width: 1250px;
-    margin: 0 auto;
+    @media (min-width: $screen_lg) {
+      padding: 0 100px;
+      width: 1250px;
+      margin: 0 auto;
+    }
   }
 }

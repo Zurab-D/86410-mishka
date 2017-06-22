@@ -7,6 +7,7 @@
     font-size: 18px;
     color: #000;
     @media (min-width: $screen_md) {
+      margin-left: -5px;
       margin-bottom: 50px;
       font-size: 43px;
       line-height: 50px;
@@ -14,6 +15,7 @@
     @media (min-width: $screen_lg) {
       position: relative;
       margin: 0;
+      margin-left: -5px;
       top: 73px;
       font-size: $header-size-lg;
       line-height: $header-height-lg;
@@ -82,7 +84,7 @@
     background-size: cover;
     @media (min-width: $screen_md) {
       margin-top: 25px;
-      margin-bottom: 53px;
+      margin-bottom: 56px;
       @include wrapper(margin, -50px);
     }
     @media (min-width: $screen_lg) {

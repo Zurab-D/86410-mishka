@@ -9,6 +9,7 @@
     font-size: 25px;
     line-height: 34px;
     @media (min-width: $screen_md) {
+      margin-left: -5px;
       font-size: 43px;
       line-height: 44px;
     }
