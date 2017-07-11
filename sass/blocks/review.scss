@@ -17,7 +17,6 @@
     @media (min-width: $screen_lg) {
       margin-bottom: 54px;
       font-size: $header-size-lg;
-      // line-height: $header-height-lg;
       line-height: 44px;
     }
   }
@@ -116,6 +115,9 @@
     padding-bottom: 43px;
     background: transparent url("../img/review@1x.jpg") 0 50% no-repeat;
     background-size: contain;
+    @media #{$retina} {
+      background-image: url("../img/review@2x.jpg");
+    }
   }
 
   @media (min-width: $screen_lg) {

@@ -82,15 +82,26 @@
     @include wrapper(margin, -30px);
     background: silver url(../img/map-mobile@1x.jpg) no-repeat;
     background-size: cover;
+    @media #{$retina} {
+      background-image: url(../img/map-mobile@2x.jpg);
+    }
     @media (min-width: $screen_md) {
       margin-top: 25px;
       margin-bottom: 56px;
       @include wrapper(margin, -50px);
+      background-image: url(../img/map-tablet@1x.jpg);
+      @media #{$retina} {
+        background-image: url(../img/map-tablet@2x.jpg);
+      }
     }
     @media (min-width: $screen_lg) {
       width: 525px;
       order: 1;
       margin: 0;
+      background-image: url(../img/map-desktop@1x.jpg);
+      @media #{$retina} {
+        background-image: url(../img/map-desktop@2x.jpg);
+      }
     }
   }
 

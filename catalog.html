@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>HTML Academy: Мишка</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body>
@@ -45,7 +45,13 @@
       <ul class="product-list">
 
         <li class="product">
-          <div class="product__img"><img src="img/photo-1-mobile@1x.jpg" alt="" width="260"></div>
+          <div class="product__img">
+            <picture>
+              <source media="(min-width: 1250px)" srcset="img/photo-1-desktop@1x.jpg 1x, img/photo-1-desktop@2x.jpg 2x">
+              <source media="(min-width: 768px)" srcset="img/photo-1-tablet@1x.jpg 1x, img/photo-1-tablet@2x.jpg 2x">
+              <img src="img/photo-1-mobile@1x.jpg" alt="" width="260">
+            </picture>
+          </div>
           <div class="product__text-wrapper">
             <h3>Зайчик-попрыгайчик</h3>
             <p>Рост 30 см, вес 200 г</p>
@@ -54,7 +60,13 @@
         </li>
 
         <li class="product">
-          <div class="product__img"><img src="img/photo-2-mobile@1x.jpg" alt="" width="260"></div>
+          <div class="product__img">
+            <picture>
+              <source media="(min-width: 1250px)" srcset="img/photo-2-desktop@1x.jpg 1x, img/photo-2-desktop@2x.jpg 2x">
+              <source media="(min-width: 768px)" srcset="img/photo-2-tablet@1x.jpg 1x, img/photo-2-tablet@2x.jpg 2x">
+              <img src="img/photo-2-mobile@1x.jpg" alt="" width="260">
+            </picture>
+          </div>
           <div class="product__text-wrapper">
             <h3>Корзинка для белья</h3>
             <p>Диаметр 15 см, высота 10 см</p>
@@ -63,7 +75,13 @@
         </li>
 
         <li class="product">
-          <div class="product__img"><img src="img/photo-3-mobile@1x.jpg" alt="" width="260"></div>
+          <div class="product__img">
+            <picture>
+              <source media="(min-width: 1250px)" srcset="img/photo-2-desktop@1x.jpg 1x, img/photo-2-desktop@2x.jpg 2x">
+              <source media="(min-width: 768px)" srcset="img/photo-2-tablet@1x.jpg 1x, img/photo-2-tablet@2x.jpg 2x">
+              <img src="img/photo-2-mobile@1x.jpg" alt="" width="260">
+            </picture>
+          </div>
           <div class="product__text-wrapper">
             <h3>Большая корзинка<br>для игрушек</h3>
             <p>Диаметр 30 см, высота 30 см</p>
@@ -75,7 +93,7 @@
 
       <section class="video">
         <h2>Процесс производства</h2>
-        <video class="video__media" width="260" src="http://placehold.it/260x150" poster="img/video-mobile@1x.jpg"></video>
+        <video class="video__media" width="260" src="http://placehold.it/260x150"></video>
         <div class="video__text-wrapper">
           <p>По просьбам наших любимых
           фолловеров мы сняли для вас
@@ -101,6 +119,6 @@
     </footer>
 
 
-    <script src="js/script.js"></script>
+    <script src="js/script.min.js"></script>
   </body>
 </html>

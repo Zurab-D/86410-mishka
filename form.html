@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>HTML Academy: Мишка</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body>
@@ -47,13 +47,15 @@
         <p class="form__title">Мы будем рады воплотить в жизнь ваши пожелания! Заполните простую форму заказа и мы свяжемся с вами, чтобы уточнить детали.</p>
 
         <div class="form__fields-group  form__fields-group--type">
-          <h3 class="form__field-label  form__field-label--type">Тип</h3>
-          <input type="radio" id="product-type-1" name="product-type"><label for="product-type-1">Аксессуар для интерьера</label>
-          <input type="radio" id="product-type-2" name="product-type"><label for="product-type-2">Детская игрушка</label>
+          <div class="form__fields-inner  form__fields-inner--type">
+            <h3 class="form__field-label  form__field-label--type">Тип</h3>
+            <input type="radio" id="product-type-1" name="product-type"><label for="product-type-1">Аксессуар для интерьера</label>
+            <input type="radio" id="product-type-2" name="product-type"><label for="product-type-2">Детская игрушка</label>
+          </div>
         </div>
 
-        <div class="form__fields-group  form__fields-group--color">
-          <div class="form__fields-inner">
+        <div class="form__fields-group  form__fields-group--color  form__fields-group--colored">
+          <div class="form__fields-inner  form__fields-inner--color">
             <h3 class="form__field-label  form__field-label--color">Цвет</h3>
             <ul class="form__color-list">
               <li><input type="checkbox" name="product-color-w" id="product-color-w" checked><label for="product-color-w">Белый</label></li>
@@ -67,25 +69,33 @@
         </div>
 
         <div class="form__fields-group  form__fields-group--fio">
-          <h3 class="form__field-label  form__field-label--fio">ФИО</h3>
-          <label>Имя:<input type="text" name="first-name" placeholder="Введите ваше имя*" required></label>
-          <label>Фамилия:<input type="text" name="last-name" placeholder="Укажите фамилию*" required></label>
-          <label>Отчество:<input type="text" name="fathers-name" placeholder="Отчество, если желаете"></label>
+          <div class="form__fields-inner  form__fields-inner--fio">
+            <h3 class="form__field-label  form__field-label--fio">ФИО</h3>
+            <label>Имя:<input type="text" name="first-name" placeholder="Введите ваше имя*" required></label>
+            <label>Фамилия:<input type="text" name="last-name" placeholder="Укажите фамилию*" required></label>
+            <label>Отчество:<input type="text" name="fathers-name" placeholder="Отчество, если желаете"></label>
+          </div>
         </div>
 
-        <div class="form__fields-group  form__fields-group--phone">
-          <label for="phone"><span class="form__field-label  form__field-label--phone">Тел</span></label>
-          <input type="text" name="phone" id="phone" placeholder="+7 XXX XX XX*" required>
+        <div class="form__fields-group  form__fields-group--phone  form__fields-group--colored">
+          <div class="form__fields-inner  form__fields-inner--phone">
+            <label for="phone"><span class="form__field-label  form__field-label--phone">Тел</span></label>
+            <input type="text" name="phone" id="phone" placeholder="+7 XXX XX XX*" required>
+          </div>
         </div>
 
-        <div class="form__fields-group  form__fields-group--email">
-          <label for="email"><span class="form__field-label  form__field-label--email">e-mail</span></label>
-          <input type="text" name="email" id="email" placeholder="Ваш e-mail*" required>
+        <div class="form__fields-group  form__fields-group--email  form__fields-group--colored">
+          <div class="form__fields-inner  form__fields-inner--email">
+            <label for="email"><span class="form__field-label  form__field-label--email">e-mail</span></label>
+            <input type="text" name="email" id="email" placeholder="Ваш e-mail*" required>
+          </div>
         </div>
 
         <div class="form__fields-group  form__fields-group--additional">
-          <label for="text"><span class="form__field-label  form__field-label--additional">Доп</span></label>
-          <textarea name="text" id="text" cols="30" rows="10"  placeholder="Опишите все ваши пожелания к заказу"></textarea>
+          <div class="form__fields-inner  form__fields-inner--additional">
+            <label for="text"><span class="form__field-label  form__field-label--additional">Доп</span></label>
+            <textarea name="text" id="text" cols="30" rows="10"  placeholder="Опишите все ваши пожелания к заказу"></textarea>
+          </div>
         </div>
 
         <div class="form__submit-group">
@@ -110,6 +120,6 @@
     </footer>
 
 
-    <script src="js/script.js"></script>
+    <script src="js/script.min.js"></script>
   </body>
 </html>

@@ -3,10 +3,26 @@
   <head>
     <meta charset="utf-8">
     <title>HTML Academy: Мишка</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+      .zaaa {
+        width: 100px;
+        height: 100px;
+        fill: #2E368F;
+        transition: all 0.1s;
+      }
+      .zaaa:hover {
+        fill: red;
+      }
+    </style>
   </head>
   <body>
+
+    <svg class="zaaa">
+      <use xlink:href="img/symbols.svg#htmlacademy"></use>
+    </svg>
+
     <header class="page-header">
       <h1 class="page-header__title">Мишка - магазин товаров ручной выделки</h1>
       <p class="page-header__info">Бесплатная доставка по России</p>
@@ -37,12 +53,16 @@
       </div>
     </header>
 
-
     <main class="main  main--index">
       <header class="main-header">
         <div class="main-header__img">
           <h2 class="main-header__title">Милые штуки ручной <br> работы для дома</h2>
-          <img src="img/hero-mobile@1x.jpg" alt="hero-mobile">
+          <picture>
+            <source media="(min-width: 768px)"
+              srcset="img/hero-desktop@1x.jpg 1x, img/hero-desktop@2x.jpg 2x"
+              alt="hero-mobile">
+            <img src="img/hero-mobile@1x.jpg" srcset="img/hero-mobile@2x.jpg 2x" alt="hero-mobile">
+          </picture>
         </div>
         <ul class="main-header__categories">
           <li class="main-header__categories-item  main-header__categories-item--active"><span>Предметы<br>интерьера</span></li>
@@ -61,7 +81,11 @@
             <li><span class="features__item-name">Высота:</span><span class="features__item-value">15 см</span></li>
           </ul>
           <div class="featured__img  featured__content-item">
-              <img src="img/triple-set-mobile@1x.jpg" alt="">
+            <picture>
+              <source media="(min-width: 1250px)" srcset="img/triple-set-desktop@1x.jpg 1x, img/triple-set-desktop@2x.jpg 2x" alt="">
+              <source media="(min-width: 768px)"  srcset="img/triple-set-tablet@1x.jpg 1x,  img/triple-set-tablet@2x.jpg 2x"  alt="">
+              <img src="img/triple-set-mobile@1x.jpg" srcset="img/triple-set-mobile@2x.jpg 2x" alt="">
+            </picture>
           </div>
           <p class="featured__price  featured__content-item">Цена: 990 руб.</p>
           <a href="" class="featured__btn  featured__content-item">Заказать</a>
@@ -124,7 +148,7 @@
 
 
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false"></script>
-    <script src="js/googleMap.js"></script>
-    <script src="js/script.js"></script>
+    <script src="js/googleMap.min.js"></script>
+    <script src="js/script.min.js"></script>
   </body>
 </html>
