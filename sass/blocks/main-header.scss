@@ -1,7 +1,9 @@
 .main-header {
   position: relative;
+  height: 487px;
   background-color: #f9f9f9;
   @include wrapper(margin, -30px);
+
 
   &__title {
     position: absolute;
@@ -20,7 +22,7 @@
       @include wrapper($size: 50px);
       top: 155px;
       font-size: 43px;
-      line-height: 50px;
+      line-height: 47px;
     }
     @media (min-width: $screen_lg) {
       @include wrapper($size: 100px);
@@ -29,6 +31,7 @@
       line-height: $header-height-lg;
     }
   }
+
 
   &__img {
     position: relative;
@@ -47,7 +50,7 @@
       }
     }
     @media (min-width: $screen_md) {
-      height: 731px;
+      height: 743px;
       margin: 0 auto;
     }
     @media (min-width: $screen_lg) {
@@ -57,16 +60,29 @@
     }
   }
 
+
   &__categories {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
     &-item {
       position: relative;
       display: block;
       @include wrapper();
-      padding-top: 27px;
-      padding-right: 150px;
+      // padding-top: 27px;
+      // padding-right: 150px;
       height: 103px;
       background-color: #56C3B2;
       text-align: left;
+      align-self: flex-end;
+      transition: height .1s;
+      &:hover {
+        height: 108px;
+        @media (min-width: $screen_md) {
+          height: 122px;
+        }
+      }
       span {
         font-weight: bold;
         font-size: 19px;
@@ -77,27 +93,23 @@
           line-height: 30px;
         }
       }
+      a {
+        display: block;
+        text-decoration: none;
+        padding-top: 27px;
+        padding-right: 150px;
+      }
       &--active {
         background-color: $color-colored;
-      }
-      :before {
-        position: absolute;
-        content: '';
-        width: 62px;
-        height: 62px;
-        @include outline();
-        right: 27px;
-        top: 50%;
-        transform: translateY(-50%);
-        @media (min-width: $screen_md) {
-          right: 34px;
-        }
       }
       @media (min-width: $screen_md) {
         // flex-basis: 50%;
         width: 50%;
-        padding-left: 35px;
-        padding-top: 26px;
+        height: 117px;
+        a {
+          padding-left: 35px;
+          padding-top: 26px;
+        }
       }
     }
 
@@ -118,9 +130,30 @@
     }
   }
 
+
+  &__categories-icon {
+    position: absolute;
+    display: block;
+    width: 60px;
+    height: 60px;
+    left: 232px;
+    top: 23px;
+    fill: #3bb09d;
+    &:hover {
+      fill: #29a592;
+    }
+    @media (min-width: $screen_md) {
+      left: 244px;
+      top: 29px;
+    }
+  }
+
+
   @media (min-width: $screen_md) {
+    height: initial;
     @include wrapper(margin, -50px);
   }
+
 
   @media (min-width: $screen_lg) {
     @include wrapper(margin, 0px);

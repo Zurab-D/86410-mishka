@@ -11,12 +11,21 @@
   white-space: nowrap;
   @include list-style();
   font-size: 0;
-  &__item {
+  &__item a {
+    display: block;
     width: 30px;
     height: 30px;
-    @include outline();
-    &--instagram {}
-    &--facebook {}
-    &--twitter {}
+    // @include outline();
+  }
+  &__item {
+    &--instagram a {
+      background-image: url(../img/symbols-g.svg#icon-in);
+    }
+    &--facebook a {
+      background-image: url(../img/symbols-g.svg#icon-fb);
+    }
+    &--twitter a {
+      background-image: url(../img/symbols-g.svg#icon-tw);
+    }
   }
 }

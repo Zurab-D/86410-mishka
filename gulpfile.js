@@ -73,7 +73,7 @@ gulp.task("images", function () {
 });
 
 gulp.task("symbols", function () {
-  return gulp.src("build/img/*.svg")
+  return gulp.src(["build/img/*.svg", "!build/img/symbols-g.svg"])
     .pipe(svgmin())
     .pipe(svgstore({
       inlineSvg: true
@@ -94,7 +94,8 @@ gulp.task("copy", function () {
     "fonts/**/*.{woff,woff2}",
     "img/**",
     "js/**",
-    "*.html"
+    "*.html",
+    "!img/logo-all.svg", "!img/htmlacademy.svg", "!img/icon-twitter.svg", "!img/icon-fb.svg", "!img/icon-insta.svg"
   ], {
       base: "."
     })
