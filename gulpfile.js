@@ -1,26 +1,29 @@
 "use strict";
 
 var gulp = require("gulp");
-var sass = require("gulp-sass");
+var sass = require("gulp-sass")(require("sass"));
 var plumber = require("gulp-plumber");
 var postcss = require("gulp-postcss");
 var autoprefixer = require("autoprefixer");
 var server = require("browser-sync").create();
 
-gulp.task("style", function() {
+gulp.task("style", function(done) {
   gulp.src("sass/style.scss")
     .pipe(plumber())
     .pipe(sass())
     .pipe(postcss([
-      autoprefixer({browsers: [
-        "last 2 versions"
-      ]})
+      autoprefixer({
+        overrideBrowserslist:  ['last 2 versions'],
+        cascade: false
+      })
     ]))
     .pipe(gulp.dest("css"))
     .pipe(server.stream());
+
+    done();
 });
 
-gulp.task("serve", ["style"], function() {
+gulp.task("serve", function(done) {
   server.init({
     server: ".",
     notify: false,
@@ -29,6 +32,11 @@ gulp.task("serve", ["style"], function() {
     ui: false
   });
 
-  gulp.watch("sass/**/*.{scss,sass}", ["style"]);
-  gulp.watch("*.html").on("change", server.reload);
+  gulp.watch("sass/**/*.{scss,sass}", gulp.series("style"));
+  gulp.watch("*.html").on("change", () => {
+    server.reload();
+    done();
+  });
+
+  done();
 });
